@@ -1,3 +1,4 @@
+// swift-tools-version:5.3
 // Copyright (c) 2017 Andrey Zarembo <andrey.zarembo@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,6 +23,18 @@ import PackageDescription
 
 let package = Package(
     name: "EasyDi",
-    dependencies : [],
-    exclude: ["Tests"]
+    products: [
+        .library(name: "EasyDi", targets: ["EasyDi"])
+    ],
+    targets: [
+        .target(
+            name: "EasyDi",
+            path: "Sources"
+        ),
+        .testTarget(
+            name: "EasyDiTests",
+            dependencies: ["EasyDi"],
+            path: "Tests"
+        )
+    ]
 )

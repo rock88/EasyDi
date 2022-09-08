@@ -42,3 +42,6 @@ xcuserdata/
 /*.gcno
 
 # End of https://www.gitignore.io/api/xcode,cocoapods
+
+# SPM
+.swiftpm
