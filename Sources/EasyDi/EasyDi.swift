@@ -59,7 +59,7 @@ public final class DIContext {
     /// Dictionary key is **key** parameter from **define** method
     var substitutions: [String: UntypedPatchClosure] = [:]
     
-    public init(locker: DIContextLocker = NSRecursiveLock()) {
+    public init(locker: DIContextLocker = NSRecursiveLock.extractFromDependencies()) {
         self.locker = locker
     }
     
